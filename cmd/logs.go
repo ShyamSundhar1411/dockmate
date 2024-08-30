@@ -9,7 +9,6 @@ import (
 	"os/exec"
 
 	"github.com/spf13/cobra"
-	"google.golang.org/genproto/googleapis/container/v1"
 )
 
 var fllowFlag bool;
@@ -26,7 +25,7 @@ This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		containerName := args[0];
-		fmt.Println("logs called");
+		getContainerLogs(containerName, fllowFlag);
 	},
 }
 
